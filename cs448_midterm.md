@@ -83,23 +83,50 @@
 
 # 3.3
 ### entity
+- an entity is an object with independent physical(car, home, person) or conceptual (company, university course) existence in the real world.
 ### attribute
-### attribute value
+- each real world entity has certain properties that represent its significance in real world or describes it. these properties of an entity are known as attribute.
+- 例えば車の内容（モデル、ブランド、色、費用等）
+### attribute value　属性値
+- Associated with each real world entity are certain attributes that describe that entity. Value of these attributes for any entity is called attribute value.
+- ex) attribute of car entity can be Red.
 ### relationship instance
+- it is instance that associates an entity from an entity type to another entity of another entity type, in order to establish a relationship among various participating entity types.
+- attributeをシェアしている。
 ### composite attribute
+- an attribute that can be divided into smaller subparts, which represent more basic attributes with independent meanings, is called a composite attribute.
+- 例えば携帯電話だとエリアコード、ナンバーなどに再分割できる。
 ### multivalued attribute
-### derived attribute
+- for a real world entity, an attribute may have more than one value.
+- 携帯電話が人というentityにあるとして、その人が２、３台持っている可能性がある。
+### derived attribute　派生attribute
+- for a real world entity, an attribute may have value that is independent of other attributes or can not be derived from other attributes; such as attributes are called as stored attributes. there are also certain attributes, whose value can be derived using value of other attributes; such attributes are known as derived attributes.
+- 年齢は誕生日からのderived attribute.
 ### complex attribute
+- composite and multivalued attribute can be nested arbitrarily. Arbitrary nesting can be represented by grouping components of a composite attribute between parenthesis () and separating the components with comas, and by displaying multivalued attributes between braces {}. such attributes are called composite attribute
 ### key attribute
-### value set
+- each real world entity is unique in itself. there are certain attributes whose value is different for all similar type of entities. These attributes are called Key attributes. These attributes are used to specify uniqueness constraint in a relation.
+- 例えば、車体ナンバーと登録番号は重なることがない。
+### value set(domain)
+- for an attribute of a real world entity, there is a range of values from which a particular attribute can take value.
+- 定義域　例えば、社員コード、名前、入社日という属性があるときに、社員コードは半角数字による0000~9999、名前の定義域は全角文字列、入社日の定義域は西暦年号での年月日という感じ。
 
-
-# 5.1
+# 5.1 they apply to the relational model of data.
 ### domain
+- it is a set of atomic(indivisible) values that can appear in a particular column in a relational schema. a common method of specifying domain is to specify a data type(integer, char, float, etc...) from which the data values forming a domain can be drawn.
+- relational schema called Student. the name of the student must be a char string. so we can say domain of name is char string.
 ### attribute
+- an attribute is a role played by some domain in the relational schema.
+- In relational schema Student, Name can be one of the attributes of the relation.
 ### n-tuple
+- if a relational schema consists of n Attributes, i.e., degree of relational schema is n, then n-tuple is an ordered list of n values that represent a tuple, t=; where each value vi, 1 <= i <= n, is a element of dom(Ai) or is a special NULL value.
 ### relation schema
+- it is but collection of attributes that define facts and relation between a real world entity and name.
 ### relation state
+- collection of various tuples, R(A1, A2, ..., An)
 ### degree of a relation
+- the degree of a relation is the number of attributes n of its relational schema.
 ### relational database schema
+- A relational database schema S is a set of relation schemas, S = {R1, R2,..., Rn} and a set of integrity constraints IC.
 ### relational database state
+- A relational database state is DB of S is set of relation states, DB = {r1, r2,..., rn}, such that each ri is state of Ri and such that the ri relation states satisfy the integrity constraints specified in IC.
